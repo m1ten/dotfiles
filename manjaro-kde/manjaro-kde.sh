@@ -11,6 +11,10 @@ echo " " && echo "${bold}Install yay and update all packages${normal}" && echo "
 
 sleep 2
 
+sudo pacman -Syu
+
+sleep 2
+
 sudo pacman -S yay 
 
 sleep 2
