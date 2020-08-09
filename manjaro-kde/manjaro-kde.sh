@@ -1,7 +1,9 @@
+# Manjaro-KDE Setup | m1ten
+
 bold=$(tput bold)
 normal=$(tput sgr0)
 
-clear && echo "${bold}Manjaro-KDE Setup${normal}" && echo " "
+clear && echo "${bold}Manjaro-KDE Setup | m1ten${normal}" && echo " "
 
 sleep 2
 
