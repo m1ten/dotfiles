@@ -3,6 +3,7 @@
 
 git clone https://github.com/m1ten/setup.git
 cd setup/[distro]
+chmod +x [distro].sh
 ./[distro].sh
 
 # remove setup folder
