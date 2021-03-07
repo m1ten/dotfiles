@@ -7,12 +7,22 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree' |
 	    \ Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
 Plug 'psliwka/vim-smoothie'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
+"Plug 'liuchengxu/vim-which-key'
+
+" Git
+
+"Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 
 call plug#end()
+
+" --- Test code ---
 
 " --- Auto install plugins on launch ---
 
@@ -24,15 +34,17 @@ autocmd VimEnter *
 " --- Basic setup ---
 
 let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 set encoding=utf-8
 set nowrap
 set hidden
 set nobackup
 set nowritebackup
 set updatetime=100
+set timeoutlen=500
 set shortmess+=c
 set mouse=a
-"set signcolumn=number
+set signcolumn=number
 set number
 set relativenumber
 set shell=zsh
@@ -49,8 +61,10 @@ set autochdir
 syntax on
 filetype plugin indent on
 
-nnoremap <C-p> :bp<CR>
-nnoremap <C-n> :bn<CR>
+" --- Git ---
+
+let g:signify_sign_show_count = 0
+let g:signify_sign_show_text = 1
 
 " --- Color & Theme ---
 
@@ -66,6 +80,9 @@ endif
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail'
 let g:airline_theme='onedark'
+
+nnoremap <C-p> :bp<CR>
+nnoremap <C-n> :bn<CR>
 
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolor=256
