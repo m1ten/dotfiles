@@ -1,4 +1,4 @@
-## Config
+## dotfiles
 
 Work in progress.
 
