@@ -5,4 +5,4 @@ Work in progress.
 
 ### License
 
-[GPL v3](https://github.com/m1ten/config/blob/main/LICENSE)
+[MIT](https://github.com/m1ten/config/blob/main/LICENSE)
