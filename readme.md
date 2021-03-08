@@ -3,9 +3,10 @@
 Work in progress.
 
 - [NVim](https://github.com/m1ten/config/tree/main/nvim/) 
-  - [ ] Fix LSP/Autocomplete
-  - [ ] Change UI
-  - [x] Add Vim Support: No True Color
+  - [ ] Add Comments
+  - [x] Fix LSP/Autocomplete: Works?
+  - [x] Change UI: Need To Read Docs.
+  - [x] Add Vim Support: No True Color?
 
 ### License
 
