@@ -2,43 +2,59 @@
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Start menu
 Plug 'mhinz/vim-startify'
+
+" LSP/Autocompletion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'codota/tabnine-vim'
-Plug 'preservim/nerdtree' |
-	    \ Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/tagbar'
-Plug 'vim-airline/vim-airline'
-Plug 'psliwka/vim-smoothie'
-Plug 'joshdick/onedark.vim'
-Plug 'ap/vim-css-color'
-Plug 'voldikss/vim-floaterm'
-Plug 'luochen1990/rainbow'
-Plug 'jiangmiao/auto-pairs'
+
+" File explorer/finder (for tags too)
+Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } |
       \ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
+Plug 'preservim/tagbar'
+
+" Theme
+Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'
+Plug 'ap/vim-css-color'
+
+" Brackets
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+
+" Terminal
+Plug 'voldikss/vim-floaterm'
+
+" Key bind menu
 "Plug 'liuchengxu/vim-which-key'
+
+" Git
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
+" Vim basics
+Plug 'psliwka/vim-smoothie'
+Plug '907th/vim-auto-save'
+
 call plug#end()
 
-" --- Test code ---
-
-" --- Auto install plugins on launch ---
-
+" Auto install plugins on launch
 autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
 
-" --- Basic setup ---
 
+" Leader key for shortcuts
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','
+
 set encoding=utf-8
 set nowrap
 set hidden
@@ -48,32 +64,45 @@ set updatetime=100
 set timeoutlen=500
 set shortmess+=c
 set mouse=a
+
+" Line nunber
 set signcolumn=number
 set number
 set relativenumber
-set shell=zsh
+
 set cursorline
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set expandtab
+
 set smartindent
 set autoindent
+
 set laststatus=0
 set noshowmode
 set autochdir
+
 syntax on
 filetype plugin indent on
 
-" --- Git ---
+" Tab
+set smarttab
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 
+" Autocompletion
+set wildmode=longest,full
+
+" Split
+set splitbelow splitright
+
+" Git
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
-" --- Floaterm ---
+" Terminal
+set shell=zsh
 
 let g:floaterm_keymap_toggle = ';'
-
 let g:floaterm_gitcommit='floaterm'
 let g:floaterm_autoinsert=1
 let g:floaterm_width=0.8
@@ -81,8 +110,7 @@ let g:floaterm_height=0.8
 let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
-" --- Color & Theme ---
-
+" True color
 if (empty($TMUX))
   if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -92,6 +120,7 @@ if (empty($TMUX))
   endif
 endif
 
+" Status bar/tabline
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
@@ -106,9 +135,11 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_theme='onedark'
 
+" Switch between buffers
 nnoremap <C-p> :bp<CR>
 nnoremap <C-n> :bn<CR>
 
+" Theme
 let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolor=256
 let g:onedark_terminal_italics=1
@@ -119,6 +150,10 @@ let g:onedark_color_overrides = {
 \}
 colorscheme onedark
 
+" Terminal background
+hi Normal guibg=NONE ctermbg=NONE
+
+" Enable color brackets
 let g:rainbow_active = 1
 
 " --- FZF ---
@@ -180,7 +215,7 @@ command! -bang -nargs=* GGrep
   \   'git grep --line-number '.shellescape(<q-args>), 0,
   \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
-" --- NerdTree/tagbar/minimap ---
+" --- NerdTree/tagbar ---
 
 augroup nerdtreehidecwd
   autocmd!
@@ -202,7 +237,7 @@ nmap <F8> :TagbarToggle<CR>
 
 " --- COC setup ---
 
-":CocInstall coc-marketplace coc-vimlsp coc-snippets coc-discord-rpc coc-pyright coc-json
+":CocInstall coc-rls coc-marketplace coc-vimlsp coc-snippets coc-discord-rpc coc-pyright coc-json
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
