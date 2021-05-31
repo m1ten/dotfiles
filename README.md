@@ -2,13 +2,18 @@
 
 Work in progress.
 
-- [NVim](https://github.com/m1ten/config/tree/main/nvim/) 
+- [Neovim](./init.vim) 
   - [ ] Add Key Bind Menu
   - [x] Add Comments: Mostly Understandable
   - [x] Fix LSP/Autocomplete: Working
   - [x] Change UI: Need To Read Docs
   - [x] Add Vim Support: No True Color
 
+- [Zsh](./zshrc)
+  - [x] Oh my zsh
+  - [x] Basic plugins
+  - [x] Basic aliases
+
 ### License
 
-[MIT](https://github.com/m1ten/config/blob/main/LICENSE)
+[zlib](https://github.com/m1ten/config/blob/main/LICENSE)
