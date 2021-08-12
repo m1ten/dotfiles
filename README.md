@@ -3,7 +3,7 @@
 Work in progress.
 
 - [Neovim](./macOS/init.vim) 
-- [Zsh](./Arch%20Linux/zshrc)
+- [Zsh](./Arch%20Linux/.zshrc)
 
 ### License
 
