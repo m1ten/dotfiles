@@ -7,5 +7,7 @@ if ! command -v python3; then
     	sudo dnf install python3.9
   	elif [ -x "$(command -v pacman)" ]; then
     	sudo pacman -S python
-  	fi 
+  	elif [ "$(uname)" = "Darwin" ]; then
+		xcode-select --install
+	fi
 fi
