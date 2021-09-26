@@ -2,7 +2,9 @@
 
 Work in progress.
 
-- [Automated Post-Install](./install.py)
+- Prerequisites (Install Python3)
+  - [Unix/Linux](./scripts/prereq.sh)
+  - [Windows](./scripts/prereq.ps1)
 - [Neovim](./init.vim) 
 
 ### License
