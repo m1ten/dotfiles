@@ -22,7 +22,7 @@ fi
 
 sudo python3 -m venv env --without-pip
 . ./env/bin/activate
-curl -LO 
+curl -LO https://github.com/m1ten/dotfiles/blob/main/scripts/main.py
 
 
 # -- Bash --
