@@ -21,25 +21,25 @@ if ! command -v python3; then
 fi
 
 # setup venv
-sudo python3 -m venv env --without-pip
-. ./env/bin/activate
+sudo python3 -m venv dashenv --without-pip
+. ./dashenv/bin/activate
 
-# curl main.py script
-curl -LO m1ten.github.io/dotfiles/scripts/main.py
+# curl dash.py script
+curl -LO m1ten.github.io/dotfiles/scripts/dash.py
 
-# Execute main.py with args?
-echo "Would you like to execute main.py?"
+# Execute dash.py with args?
+echo "Would you like to execute dash.py?"
 echo "If yes, leave blank or pass in args."
 echo "If no, enter 'n'."
 read -p "option: " option
 
 if [ "$option" != "n" ]; then
-	./main.py ${option}
+	./dash.py ${option}
 fi
 
 # Remove old files and exit
 deactivate
-rm -rf env main.py
+rm -rf dashenv dash.py
 exit
 
 # -- Bash --
@@ -62,26 +62,26 @@ if ( -Not $installed ) {
 }
 
 # setup venv
-python -m venv env --without-pip
-.\env\Scripts\Activate.ps1
+python -m venv dashenv --without-pip
+.\dashenv\Scripts\Activate.ps1
 
-$url = "https://m1ten.github.io/dotfiles/scripts/main.py"
-$outpath = "$PSScriptRoot\main.py"
+$url = "https://m1ten.github.io/dotfiles/scripts/dash.py"
+$outpath = "$PSScriptRoot\dash.py"
 
 Invoke-WebRequest -Uri $url -OutFile $outpath
 
-Write-Output "Would you like to execute main.py?"
+Write-Output "Would you like to execute dash.py?"
 Write-Output "If yes, leave blank or pass in args."
 Write-Output "If no, enter 'n'."
 $option = Read-Host -Prompt "option"
 
 if (( "n" -ne $option )) {
-	python ./main.py $option -Wait
+	python ./dash.py $option -Wait
 }
 
 deactivate
 Remove-Item $outpath
-Remove-Item .\env
+Remove-Item .\dashenv
 
 # -- PowerShell --
 
