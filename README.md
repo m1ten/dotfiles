@@ -2,9 +2,7 @@
 
 Work in progress.
 
-- Prerequisites (Install Python3)
-  - [Unix/Linux](./scripts/prereq.sh)
-  - [Windows](./scripts/prereq.ps1)
+- [Prerequisites](./scripts/prereq.ps1) (Install python3 and run dash.py)
 - [Neovim](./init.vim) 
 
 ### License
