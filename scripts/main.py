@@ -3,7 +3,7 @@
 import os
 import argparse
 import platform
-import distro as distribution
+#import distro as distribution
 
 if not os.environ['VIRTUAL_ENV']:
 	pass
