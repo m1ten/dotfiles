@@ -2,7 +2,7 @@
 
 Work in progress.
 
-- [Dash](./dash) (Automate OS install and setup)
+- [Dash](https://github.com/m1ten/dash) (Automate OS install and setup)
 - [Neovim](./init.vim) 
 
 ### License
