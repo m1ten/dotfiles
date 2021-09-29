@@ -1,8 +1,8 @@
 import argparse
 import platform
-import venv
 import subprocess
 import sys
+import venv
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-nc', '--noconfirm',
